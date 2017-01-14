@@ -1,0 +1,76 @@
+/* Defaults */
+
+* {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    box-sizing: border-box;
+    
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+}
+
+/* Flex classes */
+
+html, body{
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vertical.container {
+    flex-flow: column;
+}
+
+.flex {
+    flex: 1 1 auto;
+}
+
+/* Basic layout */
+
+header, footer {
+    height: auto;
+    background-color: gray;
+    color: white;
+}
+
+nav {
+    width: 250px;
+    background-color: bisque
+}
+
+
+/* Section styling */
+
+#sitename {
+    text-align: center;
+}
+
+span {
+    padding: 8px;
+    display: inline-block;
+}
+
+.small {
+    font-size: 10px;
+}
+
+main {
+    background-color: ghostwhite
+}
+
+nav > div {
+    overflow: scroll;
+}
+
+#navlist {
+    list-style-type: none;
+}
+
+#navlist li {
+    padding: 8px;
+    border-bottom: 1px solid gray;
+}

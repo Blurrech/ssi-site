@@ -1,0 +1,15 @@
+<ul id="navlist">
+    <li>
+        <img src="profile.png" title="Paul Roskell" />
+        <span>
+            <p>Paul Roskell</p>
+            <p class="small">Website</p>
+        </span>
+    </li>
+    <li id="item">Item 1</li>
+    <li>Item 2</li>
+    <li>Item 3</li>
+    <li>Item 4</li>
+    <li>Item 5</li>
+    <li>Item 6</li>
+</ul>
