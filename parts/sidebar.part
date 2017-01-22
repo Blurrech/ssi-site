@@ -1,7 +1,7 @@
-<ul id="navlist">
-    <li id="author_signature">
-        <img src="images/profile.jpg" class="circle" id="author_profile" title="Paul Roskell" />
-        <span id="author_name">
+<ul>
+    <li>
+        <img src="images/profile.jpg" class="circle" title="Paul Roskell" />
+        <span>
             Created by <br><strong class="small">Paul Roskell</strong>
         </span>
     </li>

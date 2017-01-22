@@ -89,7 +89,7 @@ nav {
 }
 
 /* Section styling */
-#sitename {
+nav header span {
     text-align: center;
 }
 
@@ -110,11 +110,11 @@ main {
     background-color: ghostwhite;
 }
 
-#navlist {
+nav ul {
     list-style-type: none;
 }
 
-#navlist li {
+nav ul li {
     border-bottom: 1px solid gray;
     padding: 8px;
 }
@@ -124,19 +124,19 @@ main {
     height: 32.8px;
 }
 
-nav > header {
+nav header {
     background-color: #000;
 }
 
-footer > p {
+footer p {
     margin-top: 10px;
 }
 
-nav > div {
+nav div {
     background-color: white;
 }
 
-#author_profile {
+nav div ul li img {
     /* width: 100px;
     height: auto; */
     /* FIXME: The image is not square so cannot be a perfect circle. */
@@ -145,19 +145,23 @@ nav > div {
     float: left;
 }
 
-#author_name {
+nav div ul li span {
     float: left;
     line-height: 16px;
     padding-left: 20px;
 }
 
-#author_name strong {
+nav div ul li span strong {
     padding-top: 200px;
 }
 
-#author_signature {
+li:first-child {
     height: 90px;
     line-height: 45px;
     padding: 14px 14px 14px 34px !important;
     /* FIXME: Create a separate class for the sidebar elements below this. Then remove !important. */
+}
+
+li:not(:first-child) {
+    border: none;
 }
