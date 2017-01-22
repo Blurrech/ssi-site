@@ -1,20 +1,37 @@
-<html class="gr__w3schools_com" style="height: 100%; margin: 0;">
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>W3.CSS Template</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="./template/w3.css">
-        <link rel="stylesheet" href="./template/css">
-        <link rel="stylesheet" href="./template/font-awesome.min.css">
-        <style>html,body,h1,h2,h3,h4,h5 {font-family: "Raleway", sans-serif}</style>
-        <script src="jquery.js"></script>
-        <script>$(function(){$('#header').load("header.html");});$(function(){$('#sidebar').load("sidebar.html");});$(function(){$('#content').load("content.html");});</script>
-    </head>
-    <body data-gr-c-s-loaded="true" class="w3-light-grey">
-        <div id="sidebar"></div>
-        <div class="w3-main" style="margin:0 0 0 300px; padding: 0;">
-            <div id="header"></div>
-            <div id="content"></div>
-            <hr><hr><br><hr><hr><hr><hr><hr>
-        </div>
-    </body>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Home | Small State Institute</title>
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
+    
+    <script src="jquery.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('nav > header').load('parts/navheader.part');
+            $('nav > div').load('parts/sidebar.part');
+            $('nav > footer').load('parts/footer.part');
+            $('main > header').load('parts/mainheader.part');
+            $('main > div').load('parts/content.part');
+        });
+    </script>
+</head>
+
+<body class="vertical container">
+    <div class="flex container">
+        <nav class="vertical container">
+            <header id="sidebar_header" class="container"></header>
+            <div id="sidebar_content" class="flex"></div>
+            <footer></footer>
+        </nav>
+        <main class="flex vertical container">
+            <header></header>
+            <div class="flex"></div>
+        </main>
+    </div>
+    
+</body>
 </html>
