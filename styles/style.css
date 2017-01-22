@@ -124,15 +124,11 @@ main {
     height: 32.8px;
 }
 
-#sidebar_header {
+nav > header {
     background-color: #000;
 }
 
-#sidebar_p {
-    margin-top: 10px;
-}
-
-#sidebar_content {
+nav > div {
     background-color: white;
 }
 
