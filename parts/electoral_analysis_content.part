@@ -1,3 +1,4 @@
+<div id="controls">
 <select id="parliament">
   <option value="westminster">Westminster</option>
   <option value="senedd">Senedd</option>
@@ -29,6 +30,7 @@
   <option value="cymru">Cymru</option>
   <option value="nats">Scottish Nationalist</option>
 </select>
+</div>
 
 <canvas></canvas>
 

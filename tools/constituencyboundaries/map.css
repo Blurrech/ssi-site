@@ -1,0 +1,82 @@
+body {
+	padding: 0;
+	margin: 0;
+}
+
+html, body, #map {
+	height: 100%;
+}
+
+.electorate {
+	display: block;
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	text-align: center;
+}
+
+.electorate h4 {
+	margin: 0 0 5px;
+	padding: 0;
+	color: #777;
+}
+
+.electorate p {
+	margin: 5px 0 0;
+	padding: 0;
+}
+
+.electorate span.action {
+	font-weight: bold;
+	color: #3b99fc;
+	cursor: pointer;
+}
+
+.electorate span.number {
+	font-weight: bold;
+}
+
+.areainfo {
+	width: 180px;
+	padding: 6px 8px;
+	font: 14px/16px Arial, Helvetica, sans-serif;
+	background: rgba(255,255,255,0.9);
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	border-radius: 5px;
+	text-align: center;
+}
+
+.areainfo h4 {
+	margin: 0 0 5px;
+	color: #777;
+}
+
+.areainfo p {
+	margin: 5px 0 5px 0;
+	padding: 0;
+}
+
+.areainfo span.action {
+	font-weight: bold;
+	color: #3b99fc;
+	cursor: pointer;
+}
+
+.areainfo span.label {
+	color: #000000;
+	font-weight: bold;
+}
+
+.areaname {
+	margin: 5px 0 5px 0;
+	height: 34px; 
+}
+
+.leaflet-control-layers-expanded{ 
+	width: 180px;
+	padding: 6px 8px;
+	box-shadow: 0 0 15px rgba(0,0,0,0.2);
+	background: rgba(255,255,255,0.9);
+}
