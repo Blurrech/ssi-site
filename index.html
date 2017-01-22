@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Home | Small State Institute</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="font-awesome.min.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="styles/font-awesome.min.css">
     
     <script src="jquery.js"></script>
     <script>
         $(document).ready(function() {
-            $('nav > header').load('navheader.part');
-            $('nav > div').load('sidebar.part');
-            $('nav > footer').load('footer.part');
-            $('main > header').load('mainheader.part');
-            $('main > div').load('content.part');
+            $('nav > header').load('parts/navheader.part');
+            $('nav > div').load('parts/sidebar.part');
+            $('nav > footer').load('parts/footer.part');
+            $('main > header').load('parts/mainheader.part');
+            $('main > div').load('parts/content.part');
         });
     </script>
 </head>

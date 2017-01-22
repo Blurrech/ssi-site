@@ -1,0 +1,163 @@
+/* Defaults */
+* {
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Ubuntu", sans-serif;
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+
+/* Flex classes */
+html, body{
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.vertical.container {
+    flex-flow: column;
+}
+
+.flex {
+    flex: 1 1 auto;
+}
+
+.quarter {
+    float: left;
+    width: 24.99999%;
+}
+
+.flex-container {
+    padding: 0.01em 16px;
+}
+
+.flex-container h4 {
+    float: left;
+    margin-top: 10px;
+}
+
+.clear, .flex-container:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+
+.left {
+    float: left;
+}
+
+.red {
+    background-color: #F44336;
+}
+
+.blue {
+    background-color: #2196F3;
+}
+
+.teal {
+    background-color: #009688;
+}
+
+.orange {
+    background-color: #FF9800;
+}
+
+.pad-24 {
+    padding: 24px;
+}
+
+.large-font {
+    font-size: 48px !important;
+    /* Important required to override Font Awesome library. This is easily fixable with different fa-icon class. */
+}
+
+/* Basic layout */
+header, footer {
+    background-color: #616161;
+    color: white;
+    height: auto;
+    text-align: center;
+}
+
+nav {
+    background-color: bisque;
+    width: 250px;
+}
+
+/* Section styling */
+#sitename {
+    text-align: center;
+}
+
+span {
+    display: inline-block;
+    padding: 8px;
+}
+
+.small {
+    font-size: 10px;
+}
+
+.circle {
+    border-radius: 100%;
+}
+
+main {
+    background-color: ghostwhite;
+}
+
+#navlist {
+    list-style-type: none;
+}
+
+#navlist li {
+    border-bottom: 1px solid gray;
+    padding: 8px;
+}
+
+/* Specific ELements */
+#uk_flag {
+    height: 32.8px;
+}
+
+#sidebar_header {
+    background-color: #000;
+}
+
+#sidebar_p {
+    margin-top: 10px;
+}
+
+#sidebar_content {
+    background-color: white;
+}
+
+#author_profile {
+    /* width: 100px;
+    height: auto; */
+    /* FIXME: The image is not square so cannot be a perfect circle. */
+    width: 72px;
+    height: 58px;
+    float: left;
+}
+
+#author_name {
+    float: left;
+    line-height: 16px;
+    padding-left: 20px;
+}
+
+#author_name strong {
+    padding-top: 200px;
+}
+
+#author_signature {
+    height: 90px;
+    line-height: 45px;
+    padding: 14px 14px 14px 34px !important;
+    /* FIXME: Create a separate class for the sidebar elements below this. Then remove !important. */
+}
