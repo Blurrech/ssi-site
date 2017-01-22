@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <title>Home | Small State Institute</title>
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="font-awesome.min.css">
     
-    <script src="/jquery.js"></script>
+    <script src="jquery.js"></script>
     <script>
         $(document).ready(function() {
-            $('nav > header').load('/navheader.part');
-            $('nav > div').load('/sidebar.part');
+            $('nav > header').load('navheader.part');
+            $('nav > div').load('sidebar.part');
             $('nav > footer').load('footer.part');
             $('main > header').load('mainheader.part');
             $('main > div').load('content.part');
@@ -22,8 +23,8 @@
 <body class="vertical container">
     <div class="flex container">
         <nav class="vertical container">
-            <header class="container"></header>
-            <div class="flex"></div>
+            <header id="sidebar_header" class="container"></header>
+            <div id="sidebar_content" class="flex"></div>
             <footer></footer>
         </nav>
         <main class="flex vertical container">

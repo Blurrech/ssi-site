@@ -1,15 +1,11 @@
 <ul id="navlist">
-    <li>
-        <img src="profile.png" title="Paul Roskell" />
-        <span>
-            <p>Paul Roskell</p>
-            <p class="small">Website</p>
+    <li id="author_signature">
+        <img src="profile.jpg" class="circle" id="author_profile" title="Paul Roskell" />
+        <span id="author_name">
+            Created by <br><strong class="small">Paul Roskell</strong>
         </span>
     </li>
-    <li id="item">Item 1</li>
-    <li>Item 2</li>
-    <li>Item 3</li>
-    <li>Item 4</li>
-    <li>Item 5</li>
-    <li>Item 6</li>
+    <li class="item">Deficit Reduction</li>
+    <li class="item">Electoral Analysis</li>
+    <li class="item">Boundary Reform</li>
 </ul>
