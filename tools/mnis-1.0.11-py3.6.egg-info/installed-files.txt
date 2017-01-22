@@ -1,0 +1,13 @@
+..\mnis\housedata.py
+..\mnis\mnislib.py
+..\mnis\test_mnis.py
+..\mnis\__init__.py
+..\mnis\__pycache__\housedata.cpython-36.pyc
+..\mnis\__pycache__\mnislib.cpython-36.pyc
+..\mnis\__pycache__\test_mnis.cpython-36.pyc
+..\mnis\__pycache__\__init__.cpython-36.pyc
+dependency_links.txt
+PKG-INFO
+requires.txt
+SOURCES.txt
+top_level.txt

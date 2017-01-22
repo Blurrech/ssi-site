@@ -5,7 +5,7 @@
             Created by <br><strong class="small">Paul Roskell</strong>
         </span>
     </li>
-    <li class="item">Deficit Reduction</li>
-    <li class="item">Electoral Analysis</li>
-    <li class="item">Boundary Reform</li>
+    <li class="item"><a href="deficit_reduction.html">Deficit Reduction</a></li>
+    <li class="item"><a href="electoral_analysis.html">Electoral Analysis</a></li>
+    <li class="item"><a href="boundary_reform.html">Boundary Reform</a></li>
 </ul>

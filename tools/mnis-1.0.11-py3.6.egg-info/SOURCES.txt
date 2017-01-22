@@ -1,0 +1,10 @@
+setup.cfg
+mnis/__init__.py
+mnis/housedata.py
+mnis/mnislib.py
+mnis/test_mnis.py
+mnis.egg-info/PKG-INFO
+mnis.egg-info/SOURCES.txt
+mnis.egg-info/dependency_links.txt
+mnis.egg-info/requires.txt
+mnis.egg-info/top_level.txt

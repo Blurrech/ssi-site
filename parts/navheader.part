@@ -1,2 +1,2 @@
-<img src="images/uk_flag.svg" id="uk_flag" title="Union Flag" />
-<span class="flex">Small State Institute</span>
+<a href="index.html"><img src="images/uk_flag.svg" id="uk_flag" title="Union Flag"/></a>
+<span class="flex"><a href="index.html">Small State Institute</a></span>

@@ -1,0 +1,12 @@
+Metadata-Version: 1.1
+Name: mnis
+Version: 1.0.11
+Summary: A small library that makes it easy to download data on UK Members of Parliament
+Home-page: https://github.com/olihawkins/mnis
+Author: Oliver Hawkins
+Author-email: oli@olihawkins.com
+License: UNKNOWN
+Download-URL: https://github.com/olihawkins/mnis/tarball/1.0.11
+Description: UNKNOWN
+Keywords: MPs,Parliament,House of Commons
+Platform: UNKNOWN
