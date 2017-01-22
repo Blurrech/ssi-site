@@ -1,0 +1,130 @@
+<div id="controls">
+<select id="region" onchange="updateMap(this)">
+  <option value="northern_ireland">Northern Ireland</option>
+  <option value="scotland">Scotland</option>
+  <option value="wales">Wales</option>
+  <option value="north_west">North West</option>
+  <option value="north_east">North East</option>
+  <option value="yorkshire">Yorkshire and the Humber</option>
+  <option value="east_midlands">East Midlands</option>
+  <option value="west_midlands">West Midlands</option>
+  <option value="east_england">East of England</option>
+  <option value="london">London</option>
+  <option value="south_west">South West</option>
+  <option value="south_east">South East</option>
+</select>
+
+<select id="year">
+  <option value="2015">2015</option>
+  <option value="2010">2010</option>
+  <option value="2005">2005</option>
+  <option value="2000">2000</option>
+</select>
+</div>
+
+<div id="map" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0" style="position: relative;">
+
+</div>
+
+<script type="text/javascript" src="scripts/leaflet.js"></script>
+<script type="text/javascript" src="scripts/d3.min.js"></script>
+<script type="text/javascript" src="scripts/boundaries.js"></script>
+<script>
+var region = document.getElementById("region");
+var currentRegion = region.options[region.selectedIndex].value;
+
+var year = document.getElementById("year");
+var currentYear = year.options[year.selectedIndex].value;
+
+function updateMap(selectObject) {
+    var value = selectObject.value;
+    switch(value) {
+        case "scotland":
+            var coordinates = [57.4, -4.184];
+            var zoomLevel = 6;
+	        var regionCode = "S92000003";
+            cb.mappy.remove();
+            cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "northern_ireland":
+            var coordinates = [54.75, -6.85];
+	        var zoomLevel = 8;
+	        var regionCode = "N92000002";
+            if (cb.mappy != null) cb.mappy.remove();
+            cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "wales":
+            var coordinates = [52.42, -3.9];
+	        var zoomLevel =  8;
+	        var regionCode = "W92000004";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "north_west":
+        	var coordinates = [ 54.1 ,  -2.75 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000002";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "north_east":
+            var coordinates = [ 55.1 ,  -1.948 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000001";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "yorkshire":
+            var coordinates = [ 54 ,  -1.3 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000003";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "east_midlands":
+	        var coordinates = [ 52.85 ,  -0.9 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000004";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "west_midlands":
+    	    var coordinates = [ 52.5 ,  -2.3 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000005";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "east_england":
+	        var coordinates = [ 52.25 ,  0.45 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000006";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "london":
+        	var coordinates = [ 51.5 ,  -0.126 ];
+	        var zoomLevel =  10 ;
+	        var regionCode = "E12000007";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "south_west":
+	        var coordinates = [ 51 ,  -3.55 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000009";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        case "south_east":
+	        var coordinates = [ 51.4 ,  -0.3 ];
+	        var zoomLevel =  8 ;
+	        var regionCode = "E12000008";
+            cb.mappy.remove();
+	        cb.run(coordinates, zoomLevel, regionCode);
+            break;
+        default:
+    }
+}
+updateMap(region);
+</script>

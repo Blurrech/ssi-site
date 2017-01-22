@@ -48,13 +48,13 @@ var party = document.getElementById("party");
 var currentParty = party.options[party.selectedIndex].value;
 
 switch(currentParliament) {
-    case westminster:
+    case "westminster":
         break;
-    case senedd:
+    case "senedd":
         break;
-    case stormont:
+    case "stormont":
         break;
-    case holyrood:
+    case "holyrood":
         break;
 }
 </script>

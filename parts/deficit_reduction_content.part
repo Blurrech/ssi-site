@@ -1,0 +1,60 @@
+<div id="controls">
+<select id="parliament">
+  <option value="westminster">Westminster</option>
+  <option value="senedd">Senedd</option>
+  <option value="stormont">Stormont</option>
+  <option value="holyrood">Holyrood</option>
+</select>
+
+<select id="year">
+  <option value="2015">2015</option>
+  <option value="2010">2010</option>
+  <option value="2005">2005</option>
+  <option value="2000">2000</option>
+</select>
+
+<select id="inspect">
+  <option value="marginal">Marginal Seats</option>
+  <option value="safe">Safe Seats</option>
+  <option value="loyals">Loyal MPs</option>
+  <option value="rebels">Rebel MPs</option>
+</select>
+
+<select id="party">
+  <option value="all">All</option>
+  <option value="tory">Conservative</option>
+  <option value="fabian">Labour</option>
+  <option value="kipper">UK Independence</option>
+  <option value="lidem">Liberal Democrats</option>
+  <option value="green">Green</option>
+  <option value="cymru">Cymru</option>
+  <option value="nats">Scottish Nationalist</option>
+</select>
+</div>
+
+<canvas></canvas>
+
+<script>
+var parliament = document.getElementById("parliament");
+var currentParliament = parliament.options[parliament.selectedIndex].value;
+
+var year = document.getElementById("year");
+var currentYear = year.options[year.selectedIndex].value;
+
+var inspect = document.getElementById("inspect");
+var currentInspect = inspect.options[inspect.selectedIndex].value;
+
+var party = document.getElementById("party");
+var currentParty = party.options[party.selectedIndex].value;
+
+switch(currentParliament) {
+    case westminster:
+        break;
+    case senedd:
+        break;
+    case stormont:
+        break;
+    case holyrood:
+        break;
+}
+</script>
