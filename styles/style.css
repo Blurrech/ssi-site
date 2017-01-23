@@ -13,9 +13,10 @@ html, body{
     height: 100%;
 }
 
-select {
+select, button {
     margin: 20px;
     border: 0.1px solid black;
+    padding: 4px;
 }
 
 .container {

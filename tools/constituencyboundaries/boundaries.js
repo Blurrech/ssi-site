@@ -388,10 +388,8 @@ cb.MapModel = function(mapView) {
 
 		// The callback function used to retrieve json data for new constituencies
 		var downloadNewCons = function(error, json) {
-
 			// Stop and log an error if the json does not return
 			if (error) return console.warn(error);
-
 			newConLayer = L.geoJson(json, {
 				className: regionCode, 
 				color: '#00E0FF',
@@ -399,35 +397,24 @@ cb.MapModel = function(mapView) {
 				weight: 4,
 				fillOpacity: 0.0,
 				onEachFeature: function(feature, layer) {
-
 					layer.on('dblclick', function(e) {
-
 						var z = mapView.map.getZoom() + (e.originalEvent.shiftKey ? -1: 1);
 						mapView.map.setZoomAround(e.containerPoint, z);
 					});
-
 					layer.on('mouseover', function(e) {
-
 						mapModel.setHighlightedNewCon(feature, e.target);
 					});
-
 					layer.on('mousemove', function(e) {
-
 						mapModel.setCurrentNewCon(feature, e.target);
 					});
-
 					layer.on('mouseout', function(e) {
-
 						mapModel.clearCurrentNewCon();
 					});
-
 					layer.on('contextmenu', function(e) {
-
 						mapModel.setHighlightedNewCon(feature, e.target);
 					});
 				}
 			});
-			
 			mapModel.newConLayer = newConLayer;
 			mapModel.registerDownload();
 		};
@@ -440,7 +427,7 @@ cb.MapModel = function(mapView) {
 		var oldConJsonPath = 'C:/Users/Paul/Desktop/font-awesome-4.7.0/small_state_institute_dashboard/alpha/tools/constituencyboundaries/constituencies/' + regionCode + '.json';
 		d3.json(oldConJsonPath, downloadOldCons);
 
-		// Download old constituencies
+		// Download new constituencies
 		var newConJsonPath = 'C:/Users/Paul/Desktop/font-awesome-4.7.0/small_state_institute_dashboard/alpha/tools/constituencyboundaries/constituencies/old/' + regionCode + '.json';
 		d3.json(newConJsonPath, downloadNewCons);
 	};

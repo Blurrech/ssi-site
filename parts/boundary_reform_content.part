@@ -20,6 +20,9 @@
   <option value="2005">2005</option>
   <option value="2000">2000</option>
 </select>
+
+<button onclick="runAlgorithm();">Run Algorithm</button>
+
 </div>
 
 <div id="map" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0" style="position: relative;">
@@ -35,6 +38,22 @@ var currentRegion = region.options[region.selectedIndex].value;
 
 var year = document.getElementById("year");
 var currentYear = year.options[year.selectedIndex].value;
+
+function runAlgorithm() {
+    
+}
+
+function getElectoralQuota() {
+
+}
+
+function expandToQuota() {
+
+}
+
+function pickStartNode() {
+
+}
 
 function updateMap(selectObject) {
     var value = selectObject.value;
