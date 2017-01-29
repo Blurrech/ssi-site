@@ -1,0 +1,15 @@
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(142)] SuspendThread: Access is denied. (0x5)
+[0125/224423:ERROR:process_reader_win.cc(114)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0125/224423:ERROR:process_reader_win.cc(114)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0125/224423:ERROR:process_reader_win.cc(114)] NtOpenThread: An invalid Client ID was specified.  (0xc000000b)
+[0125/224423:ERROR:exception_snapshot_win.cc(87)] thread ID 1640 not found in process
+[0125/224423:WARNING:crash_report_exception_handler.cc(61)] ProcessSnapshotWin::Initialize failed
+[0125/224423:ERROR:scoped_process_suspend.cc(38)] NtResumeProcess: An attempt was made to access an exiting process.  (0xc000010a)

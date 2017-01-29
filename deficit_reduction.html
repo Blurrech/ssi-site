@@ -1,33 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Deficit Reduction --- Small State Institute</title>
-    <link rel="stylesheet" href="styles/style.css">
-    <link rel="stylesheet" href="styles/font-awesome.min.css">
-    <script src="scripts/jquery.js"></script>
-    <script>
-        $(document).ready(function() {
-            $('nav header').load('parts/navheader.part');
-            $('nav div').load('parts/sidebar.part');
-            $('nav footer').load('parts/footer.part');
-            $('main header').load('parts/mainheader.part');
-            $('main div').load('parts/deficit_reduction_content.part');
-        });
-    </script>
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Deficit Reduction --- Small State Institute</title>
+        <link rel="stylesheet" href="styles/style.css">
+        <link rel="stylesheet" href="styles/font-awesome.min.css">
+        <script src="scripts/jquery.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('body').load('parts/body.part', function()  {
+                    $('nav header').load('parts/navheader.part');
+                    $('nav div').load('parts/sidebar.part');
+                    $('nav footer').load('parts/footer.part');
+                    $('main header').load('parts/mainheader.part');
+                    $('main div').load('parts/deficit_reduction_content.part'); 
+                });
+            });
+        </script>
+    </head>
 <body class="vertical container">
-    <div class="flex container">
-        <nav class="vertical container">
-            <header class="container"></header>
-            <div class="flex"></div>
-            <footer></footer>
-        </nav>
-        <main class="flex vertical container">
-            <header></header>
-            <div class="flex"></div>
-        </main>
-    </div>
 </body>
 </html>

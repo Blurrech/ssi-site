@@ -3,7 +3,6 @@
     border: 0;
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
-    font-size: 14px;
     margin: 0;
     padding: 0;
 }
@@ -24,6 +23,15 @@ select, button {
     flex-wrap: wrap;
 }
 
+.proposal {
+    margin: 20px;
+    display: inline-block;
+    background-color: rgba(177, 177, 177, 0.22);
+    width: 360px;
+    border-radius: 0% 0% 5% 5%;
+    box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.47);
+}
+
 .vertical.container {
     flex-flow: column;
 }
@@ -32,9 +40,50 @@ select, button {
     flex: 1 1 auto;
 }
 
+#controls {
+    padding: 5px;
+}
+
+.content {
+    margin-left: 250px;
+}
+
+.content h1, .content div {
+    padding: 20px;
+    display: inherit;
+}
+
+.content h1 {
+    text-align: center;
+}
+
 .quarter {
     float: left;
     width: 24.99999%;
+}
+
+.half {
+    float: left;
+    width: 49.99999%;
+}
+
+.third {
+    float: left;
+    width: 32.99999%;
+}
+
+.twothirds {
+    float: left;
+    width: 65.99999%; 
+}
+
+.sixth {
+    float: left;
+    width: 16.66666%;
+}
+
+.marginb10  {
+    margin-bottom: 10px;
 }
 
 .flex-container {
@@ -56,12 +105,67 @@ select, button {
     float: left;
 }
 
+.full {
+    padding: 0 !important;
+    float: left;
+    width: 100%;
+}
+
+.department {
+    color: #FFFFFF;
+    text-align: center;
+}
+
+.agency {
+    display: inline-block;
+    background-color: #E0F2F1;
+    color: #000000;
+    margin: 10px 0 10px 0;
+}
+
+.diagram {
+    padding: 0 !important;
+    display: block;
+    overflow: auto;
+    margin-left: 10%;
+    margin-right: 10%;
+    text-align: center;
+}
+
+.text_black {
+    color: black;
+}
+
+.pad-2 {
+    padding: 3px !important;
+}
+
+.dwhite {
+    background-color: #F5F5F5;
+}
+
+.dblack {
+    background-color: black;
+}
+
+.dblue {
+    background-color: #3E50B4;
+}
+
+.dpink {
+    background-color: #FF3F80;
+}
+
 .red {
     background-color: #F44336;
 }
 
 .blue {
     background-color: #2196F3;
+}
+
+.lteal {
+    background-color: #E0F2F1;
 }
 
 .teal {
@@ -72,8 +176,14 @@ select, button {
     background-color: #FF9800;
 }
 
+.white {
+    background-color: #FFFFFF;
+}
+
 .pad-24 {
     padding: 24px;
+    overflow: hidden;
+    max-height: 124px;
 }
 
 .large-font {
@@ -99,11 +209,6 @@ nav header span {
     text-align: center;
 }
 
-nav header a {
-  color: inherit;
-  text-decoration: none;
-}
-
 span {
     display: inline-block;
     padding: 8px;
@@ -119,6 +224,11 @@ span {
 
 main {
     background-color: ghostwhite;
+}
+
+nav {
+    position: fixed;
+    height: 100%;
 }
 
 nav ul {
@@ -177,10 +287,22 @@ nav div ul li:not(:first-child) {
     border: none;
 }
 
-nav div ul li:not(:first-child) a {
+main header:first-child {
+    margin-left: 250px;
+}
+
+main header div a {
+    color: inherit;
+}
+
+nav header a {
+    color: inherit;
+}
+
+a {
     text-decoration: none;
 }
 
-nav div ul li:not(:first-child) a:hover {
+a:hover {
     text-decoration: underline;
 }

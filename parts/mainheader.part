@@ -1,28 +1,36 @@
 <div class="quarter">
+    <a href="infrastructure.html">
     <div class="flex-container red pad-24">
         <div class="left"><i class="fa fa-road large-font"></i></div>
         <div class="clear"></div>
         <h4>Private Infrastructure</h4>
     </div>
+    </a>
 </div>
 <div class="quarter">
+    <a href="enterprise.html">
     <div class="flex-container blue pad-24">
         <div class="left"><i class="fa fa-briefcase large-font"></i></div>
         <div class="clear"></div>
         <h4>Free Enterprise</h4>
     </div>
+    </a>
 </div>
 <div class="quarter">
+    <a href="sound_money.html">
     <div class="flex-container teal pad-24">
         <div class="left"><i class="fa fa-money large-font"></i></div>
         <div class="clear"></div>
         <h4>Sound Money</h4>
     </div>
+    </a>
 </div>
 <div class="quarter">
+    <a href="balanced_budgets.html">
     <div class="flex-container orange pad-24">
         <div class="left"><i class="fa fa-bank large-font"></i></div>
         <div class="clear"></div>
         <h4>Balanced Budgets</h4>
     </div>
+    </a>
 </div>
