@@ -5,10 +5,12 @@
             Created by <br><strong class="small">Paul Roskell</strong>
         </span>
     </li>
-    <li class="item"><a href="deficit_reduction.html">Deficit Reduction</a></li>
-    <li class="item"><a href="electoral_analysis.html">Electoral Analysis</a></li>
-    <li class="item"><a href="boundary_reform.html">Boundary Reform</a></li>
-    <li class="item"><a href="selsdon.html">Selsdon Principles</a></li>
-    <li class="item"><a href="state_builder.html">State Builder</a></li>
-    <li class="item"><a href="compass.html">Political Compass</a></li>
+    <li class="item"><i class="fa fa-suitcase" aria-hidden="true"></i> <a href="deficit_reduction.html">Deficit Reduction</a></li>
+    <li class="item"><i class="fa fa-folder-open" aria-hidden="true"></i> <a href="departmental_reform.html">Departmental Reform</a></li>
+    <li class="item"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a href="electoral_analysis.html">Electoral Analysis</a></li>
+    <li class="item"><i class="fa fa-map" aria-hidden="true"></i> <a href="boundary_reform.html">Boundary Reform</a></li>
+    <li class="item"><i class="fa fa-building" aria-hidden="true"></i> <a href="state_builder.html">State Builder</a></li>
+    <li class="item"><i class="fa fa-compass" aria-hidden="true"></i> <a href="compass.html">Political Compass</a></li>
+    <li class="item"><i class="fa fa-globe" aria-hidden="true"></i> <a href="global_polls.html">Global Polls</a></li>
+    <li class="item"><i class="fa fa-shield" aria-hidden="true"></i> <a href="selsdon.html">Selsdon Principles</a></li>
 </ul>
