@@ -14,6 +14,39 @@ Link blue: #3b99fc
 // Set up global application object
 var cb = {};
 window.cb = cb;
+    
+var tory = "#0087DC";
+var labour = "#DC241F";
+
+var labour_constituencies = [];
+var tory_constituencies = [];
+    
+function processData(allText) {
+    var allTextLines = allText.split(/\r\n|\n/);
+    var headers = allTextLines[0].split(',');
+    var lines = [];
+    for (var i = 1; i < allTextLines.length; i++) {
+        var data = allTextLines[i].split(',');
+        if (data.length == headers.length) {
+            var tarr = [];
+            for (var j=0; j<headers.length; j++) {
+                tarr.push(data[j]);
+            }
+            lines.push(tarr);
+        }
+    }
+
+    for (var x = 1; x < lines.length; x++) {
+        if (lines[x][6] > 50) {
+            if (lines[x][16] === "Labour" || lines[x][16] === "Labour and Co-operative") {
+                labour_constituencies.push(lines[x][3].split('|').join(','));
+            }
+            if (lines[x][16] === "Conservative") {
+                tory_constituencies.push(lines[x][3].split('|').join(','));
+            }
+        }
+    }
+}
 
 /* Constructor for the MapView object, a singleton that manages the state 
 of the Leaflet map. */
@@ -24,6 +57,7 @@ cb.MapView = function(map) {
 	this.areaInfo = null;
 	this.boundaryLayers = null;
 	this.wardLayer = null;
+    this.notadded = true;
 	this.oldConLayer = null;
 	/* Mapbox tileLayer settings {id} ------------------------------ */
 	var tileLayerPath = 'https://api.tiles.mapbox.com/v4/mapbox.streets-basic/{z}/{x}/{y}.png?access_token={accessToken}',
@@ -54,8 +88,7 @@ cb.MapView = function(map) {
 				'Get Data</span></p>';
 		} else {
 			var electorate = cb.numberWithCommas(electorate);
-			this._div.innerHTML = '<h4>Electorate</h4>' + 
-				'<p><span class="number">0</span></p>';
+			this._div.innerHTML = '<h4>Electorate</h4>' +'<p><span class="number">0</span></p>';
 		}
 	};
 	this.areaInfo = L.control({position: 'bottomright'});
@@ -66,11 +99,9 @@ cb.MapView = function(map) {
 	};
 	this.areaInfo.update = function(areaLabel, areaName, areaCode, electorate) {
 		var areaLabel = (areaLabel !== '') ? areaLabel : 'Area Information';
-		var areaCode = (areaCode !== '') ? areaCode : '&hellip;';
 		var areaName = (areaName !== '') ? areaName : '&hellip;';
 		var electorate = cb.numberWithCommas(electorate);
 		this._div.innerHTML = '<h4>' + areaLabel + '</h4>' + 
-			'<p><span class="label">' + areaCode + '</span></p>' +
 			'<div class="areaname"><p><span class="label">' + areaName + '</span></p></div>' + 
 			'<h4>Electorate</h4><p>' + 
 			'<span class="label">' + electorate + '</span></p>' + 
@@ -87,15 +118,18 @@ cb.MapView = function(map) {
 		};
 
 		// Creates a layer group control
-		this.boundaryLayers = L.control.layers({}, boundaries, {position: 'bottomright', collapsed: false});
+		//this.boundaryLayers = L.control.layers({}, boundaries, {position: 'bottomright', collapsed: false}); re-add me maybe
 		this.oldConLayer.setZIndex(1);
-		this.wardLayer.setZIndex(3);
-		this.tileLayer.addTo(this.map);
-		this.oldConLayer.addTo(this.map);
-		this.wardLayer.addTo(this.map);
-		this.electorate.addTo(this.map);
-		this.boundaryLayers.addTo(this.map);
-		this.areaInfo.addTo(this.map);
+		//this.wardLayer.setZIndex(3); re-add me maybe
+        
+        /// Comment out tileLayer.addTo to hide the backing map.
+		//this.tileLayer.addTo(this.map);
+        this.oldConLayer.addTo(this.map);
+		if (this.notadded) {
+            this.areaInfo.addTo(this.map);
+		    this.electorate.addTo(this.map);
+            this.notadded = false;
+        }
     }
 };
 
@@ -142,10 +176,10 @@ cb.MapModel = function(mapView) {
 	// Registers that layers have downloaded asynchronously 
 	this.registerDownload = function() {
 		this.boundaryDownloads = this.boundaryDownloads - 1;
-		if (this.boundaryDownloads === 0) {
+		//if (this.boundaryDownloads === 0) {
             //this.mapView.buildMap(this.wardLayer, this.oldConLayer);
 			this.mapView.buildMap(this.wardLayer, this.oldConLayer);
-		}
+		//}
 	};
 
 	// Sets the displayed area information
@@ -196,41 +230,59 @@ cb.MapModel = function(mapView) {
 
 		// The callback function used to retrieve json data for old constituencies
 		var downloadOldCons = function(error, json) {
-
 			// Stop and log an error if the json does not return
 			if (error) return console.warn(error);
-
+            var color = '#FF00B0';
+            
 			oldConLayer = L.geoJson(json, {
 				className: regionCode, 
-				color: '#FF00B0',
+				color: color,
 				opacity: 1.0,
-				weight: 5,
-				fillOpacity: 0.0,
+				weight: 1,
+				fillOpacity: 1.0,
+                style: function(feature) {
+                    var index = labour_constituencies.indexOf(feature.properties.PCON11NM);
+                    if (index >= 0) {
+                        return {
+                            weight: 1,
+                            opacity: 1.0,
+                            color: color,
+                            dashArray: '3',
+                            fillOpacity: 1.0,
+                            fillColor: labour
+                        };
+                    }
+                    var index = tory_constituencies.indexOf(feature.properties.PCON11NM);
+                    if (index >= 0) {
+                        return {
+                            weight: 1,
+                            opacity: 1.0,
+                            color: color,
+                            dashArray: '3',
+                            fillOpacity: 1.0,
+                            fillColor: tory
+                        };
+                    }
+                },
 				onEachFeature: function(feature, layer) {
-
 					layer.on('dblclick', function(e) {
-
 						var z = mapView.map.getZoom() + (e.originalEvent.shiftKey ? -1: 1);
 						mapView.map.setZoomAround(e.containerPoint, z);
 					});
 
 					layer.on('mouseover', function(e) {
-
 						mapModel.setHighlightedOldCon(feature, e.target);
 					});
 
 					layer.on('mousemove', function(e) {
-
 						mapModel.setCurrentOldCon(feature, e.target);
 					});
 
 					layer.on('mouseout', function(e) {
-
 						mapModel.clearCurrentOldCon();
 					});
 
 					layer.on('contextmenu', function(e) {
-
 						mapModel.setHighlightedOldCon(feature, e.target);
 					});
 				}
@@ -241,7 +293,7 @@ cb.MapModel = function(mapView) {
 		};
 
 		// Download wards
-		var wardJsonPath = 'C:/Users/Paul/Desktop/font-awesome-4.7.0/small_state_institute_dashboard/alpha/scripts/wards//' + regionCode + '.json';
+		var wardJsonPath = 'C:/Users/Paul/Desktop/font-awesome-4.7.0/small_state_institute_dashboard/alpha/scripts/wards/' + regionCode + '.json';
 		d3.json(wardJsonPath, downloadWards);
 
 		// Download old constituencies
@@ -313,7 +365,7 @@ cb.MapModel = function(mapView) {
 				
 				} else {
 
-					this.highlightedWard.setStyle({color: '#606060',opacity: 1.0, weight: 1});
+					this.highlightedWard.setStyle({color: '#606060', opacity: 1.0, weight: 1});
 					this.clearCurrentWard();
 					this.highlightedWard = null;
 					this.highlightedWardCode = '';
@@ -321,7 +373,7 @@ cb.MapModel = function(mapView) {
 			}
 
 			layer.bringToFront();
-			layer.setStyle({color: '#FFCC00', opacity: 1.0, weight: 4});
+			layer.setStyle({color: '#FFCC00', opacity: 1.0, weight: 2});
 			this.highlightedWard = layer;
 			this.highlightedWardCode = feature.properties.WD15CD;
 			this.setCurrentWard(feature, layer);
@@ -404,7 +456,7 @@ cb.MapModel = function(mapView) {
 				
 				} else {
 
-					this.highlightedOldCon.setStyle({color: '#FF00B0', weight: 4});
+					this.highlightedOldCon.setStyle({color: '#FF00B0', weight: 2});
 					this.clearCurrentOldCon();
 					this.highlightedOldCon = null;
 					this.highlightedOldConCode = '';
@@ -412,7 +464,7 @@ cb.MapModel = function(mapView) {
 			}
 
 			layer.bringToFront();
-			layer.setStyle({color: '#FFCC00', weight: 4});
+			layer.setStyle({color: '#FFCC00', weight: 1});
 			this.highlightedOldCon = layer;
 			this.highlightedOldConCode = feature.properties.PCON11CD;
 			this.setCurrentOldCon(feature, layer);
@@ -424,7 +476,7 @@ cb.MapModel = function(mapView) {
 
 		if (this.highlightedOldCon !== null) {
 			
-			this.highlightedOldCon.setStyle({color: '#FF00B0', weight: 4});
+			this.highlightedOldCon.setStyle({color: '#FF00B0', weight: 1});
 			this.highlightedOldCon = null;
 			this.highlightedOldConCode = '';
 		}
@@ -481,8 +533,16 @@ cb.MapController = function(mapModel) {
 };
 
 // The function to start the application
-cb.run = function(coordinates, zoomLevel, regionCode) { 
-
+cb.run = function(coordinates, zoomLevel, regionCode) {
+    $.ajax({
+        type: "GET",
+        url: "scripts/seats/2015_westminster_results.csv",
+        dataType: "text",
+        async: false,
+        success: function(data) {
+            processData(data);
+        }
+    });
 	// Initialise the map
 	var map = L.map('map').setView(coordinates, zoomLevel);
     cb.mappy = map;

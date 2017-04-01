@@ -32,7 +32,12 @@
 </select>
 </div>
 
-<canvas></canvas>
+
+<div id="map" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0" style="position: relative;"></div>
+
+<script type="text/javascript" src="scripts/leaflet.js"></script>
+<script type="text/javascript" src="scripts/d3.min.js"></script>
+<script type="text/javascript" src="scripts/electoral_analysis.js"></script>
 
 <script>
 var parliament = document.getElementById("parliament");
@@ -57,4 +62,31 @@ switch(currentParliament) {
     case "holyrood":
         break;
 }
+
+var coordinates = [55.7 , -0.3];
+var zoomLevel =  5;
+var regionCode = "E12000009";
+cb.run(coordinates, zoomLevel, regionCode);
+regionCode = "E12000008";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000007";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000006";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000005";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000004";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000003";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000002";
+cb.mapController.setupMap(regionCode);
+regionCode = "E12000001";
+cb.mapController.setupMap(regionCode);
+regionCode = "W92000004";
+cb.mapController.setupMap(regionCode);
+regionCode = "S92000003";
+cb.mapController.setupMap(regionCode);
+regionCode = "N92000002";
+cb.mapController.setupMap(regionCode);
 </script>

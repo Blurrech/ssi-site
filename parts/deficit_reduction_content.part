@@ -1,4 +1,12 @@
-<div class="proposal">
+<h1>Deficit Reduction</h1>
+<div class="principles bl"">
+    <h2>Reforms</h2>
+    <p>Merge National Insurance and Income Tax</p>
+</div>
+
+<div class="principles bl"">
+    <h2>Spending Cuts</h2>
+    <div class="proposal">
 Winter Fuel Payment
 </div>
 <div class="proposal">
@@ -18,4 +26,12 @@ Bus Service Operators Grant
 </div>
 <div class="proposal">
 UK Research and Innovation
+</div>
+</div>
+
+<div class="principles bl"">
+    <h2>Tax Cuts</h2>
+    <p>Carbon Price Floor</p>
+    <p>Air Passenger Duty</p>
+    <p>Climate Change Levy</p>   
 </div>

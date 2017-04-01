@@ -23,6 +23,70 @@ select, button {
     flex-wrap: wrap;
 }
 
+.bb {
+    border: 2px solid #FF9800; 
+}
+
+.bb h2 {
+    background: #FF9800;
+}
+
+.bl {
+    border: 2px solid black; 
+}
+
+.bl h2 {
+    background: black;
+}
+
+.sm {
+    border: 2px solid #009688; 
+}
+
+.sm h2 {
+    background: #009688;
+}
+
+.fe {
+    border: 2px solid #2196F3; 
+}
+
+.fe h2 {
+    background: #2196F3;
+}
+
+.pi {
+    border: 2px solid #F44336; 
+}
+
+.pi h2 {
+    background: #F44336;
+}
+
+.principles {
+    width: 600px;
+    margin: 0 20px 20px 20px;
+    padding: 0 0 10px 0 !important;
+    display: block;
+    background-color: white;    
+    -moz-border-radius-topright:5px;
+    -moz-border-radius-topleft:5px;
+    -webkit-border-top-right-radius:5px;
+    -webkit-border-top-left-radius:5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.principles h2 {
+    color:white;
+    padding: 10px;
+}
+
+.principles p {
+    margin: 20px;
+    padding: 5px 10px 0 10px;
+}
+
 .proposal {
     margin: 20px;
     display: inline-block;
@@ -55,6 +119,10 @@ select, button {
 
 .content h1 {
     text-align: center;
+}
+
+#map div {
+    padding: 6px !important;
 }
 
 .quarter {
@@ -242,7 +310,7 @@ nav ul li {
 
 /* Specific ELements */
 nav header a img, nav header a {
-    height: 32.8px;
+    height: 34.4px;
 }
 
 nav header {
