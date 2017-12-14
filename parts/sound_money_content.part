@@ -1,20 +1,136 @@
+<script>
+var tabsToWhere = 'railtab';
+var tabsToClose = ['railtab', 'roadtab', 'skytab', 'communicationstab', 'energytab', 'housingtab'];
+var cityPrefix = '';
+function open(evt, cityName, tabtype) {
+    cityName = cityPrefix + cityName;
+    
+    // Declare all variables
+    var i, k, tabcontent, tablinks;
+
+    // Get all elements with class=tabsToWhere and hide them
+    for (k = 0; k < tabsToClose.length; k++) {
+        tabcontent = document.getElementsByClassName(tabsToClose[k]);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+    }
+
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        if (evt != null) tablinks[i].className = "tablink";
+    }
+    
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    
+    if (evt != null) {
+        evt.currentTarget.className += " active" + tabtype;
+    }
+}
+
+var defaultx = document.getElementById("default");
+defaultx.click();
+
+function showDiv(elem) {
+    var tabsBefore = tabsToWhere;
+    cityPrefix = elem.value.charAt(0).toUpperCase() + elem.value.substr(1);
+    switch(elem.value) {
+        case "rail":
+            tabsToWhere = 'railtab';
+            cityPrefix = '';    
+            break;
+        case "road":
+            tabsToWhere = 'roadtab';
+            break;
+        case "sky":
+            tabsToWhere = "skytab";
+            break;
+        case "communications":
+            tabsToWhere = "communicationstab";
+            break;
+        case "energy":
+            tabsToWhere = "energytab";
+            break;
+        case "housing":
+        default:
+            tabsToWhere = "housingtab";
+            break; 
+    }
+    var defaultx = document.getElementById("default");
+    defaultx.click();
+}
+document.getElementById("Investment").style.display = "block"   
+</script>
+
 <h1>Sound Money</h1>
+
+<div style="float: left; height: 1000px; width: 600px;">
 <div class="principles sm">
     <h2>Principles</h2>
     <p>Fiat currency debasement is immoral as it lacks explicit consent and disproportionately hurts the poor.</p>
+    <p>Money should serve as an honest measure and reliable store of value. Sound money refers to a currency which not rapidly inflating or deflating in value.</p>
 </div>
-<quote> 
-Sound money refers to a currency which not rapidly inflating or deflating in value.
-</quote>
-<br><br>
-<quote> 
-A free floating fiat currency with an oracle imbued central bank setting interest rates effectively.
-</quote>
-<br><br>
-<quote> 
-A privately issued cryptocurrency that is fixed in quantity by majority consensus.
-</quote>
-<br><br>
-<quote> 
-A commodity backed currency.
-</quote>
+
+<div class="principles sm">
+    <h2>The Case Against Fiat</h2>
+<p>With an inflating fiat currency, at the typical 2% inflation target, the value of money halves approximately every 30 years. This allows governments to engage in stealth taxation using fiscal drag, whereby tax bands aren't increased in line with inflation.</p>
+<p>The Bank of England, while superior to Treasury management, is an unjustifiable monopoly over currency issuance. Furthermore, the record of the state over the last 40 years has been abysmal. </p>
+<p>National currencies can also present an unnecessary barrier to global trade.</p>
+</div>
+</div>
+
+<div>
+
+<div class="principles sm">
+<h2><select onchange="showDiv(this)">
+  <option value="bitcoin">Bitcoin</option>
+  <option value="grin">Grin</option>
+</select></h2>
+    <div class="tab">
+        <button id="default" class="tablink default" onclick="open(event, 'Consensus', tabsToWhere)">Consensus</button>
+        <button class="tablink" onclick="open(event, 'IntrinsicValue', tabsToWhere)">Intrinsic Value</button>
+        <button class="tablink" onclick="open(event, 'Features', tabsToWhere)">Features</button>
+        <button class="tablink" onclick="open(event, 'Adoption', tabsToWhere)">Adoption</button>
+        <button class="tablink" onclick="open(event, 'Recommendations', tabsToWhere)">Recommendations</button>
+    </div>
+
+    <div id="Consensus" class="railtab">
+    <h3>Consensus</h3>
+    <p>Bitcoin maintains its monetary policy through "Nakamoto" consensus amongst the miners.</p>
+    </div>
+
+    <div id="IntrinsicValue" class="railtab">
+    <h3>Intrinsic Value</h3>
+    <p>As a cryptocurrency, Bitcoin exhibits a network effect whereby it becomes more valuable as the number of users grows. Therefore Bitcoin can be valued using Metcalfe's Law.</p>
+    <p>This means that the value of the network is proportional to the square of the number of connected users in the system.</p>
+    </div>
+
+    <div id="Features" class="railtab">
+    <h3>Features</h3>
+    <p>Cross-border payments</p>
+    <p></p>
+    </div>
+    
+    <div id="Adoption" class="railtab">
+    <h3>Adoption</h3>
+    <p>...</p>
+    </div>
+    
+    <div id="Recommendations" class="railtab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>...</li>
+    </ul>
+    </div>
+    </div>
+
+<div class="principles sm">
+    <h2>Currency Options</h2>
+<p>A commodity backed currency. This option is deeply flawed as the supply of the commodity backing the currency can be arbitrarily changed without consensus by the issuer.</p>
+<p>A free floating fiat currency with an oracle imbued central bank setting interest rates effectively. While seemingly ideal, this option would lack the innovation of the market and no such oracle has been identified. The burden of proof on such an oracle remains on its proponents.</p>
+<p>A cryptocurrency that is fixed in quantity by majority consensus on a blockchain, or future blockchain descendant such as Grin.</p>
+</div>
+</div>

@@ -1,6 +1,5 @@
 /* Defaults */
 * {
-    border: 0;
     box-sizing: border-box;
     font-family: "Ubuntu", sans-serif;
     margin: 0;
@@ -12,15 +11,44 @@ html, body{
     height: 100%;
 }
 
-select, button {
-    margin: 20px;
-    border: 0.1px solid black;
-    padding: 4px;
+select, button, #controls, #map div {
+    margin: 4px 20px 4px 20px;
+    padding: 10px;
 }
 
 .container {
     display: flex;
     flex-wrap: wrap;
+}
+
+.pdf, .share {
+    background: #F1F1F1;
+    width: 160px;
+    padding: 5px !important;
+    margin: 8px 50px 18px 50px;
+    border: 1px black dotted;
+    float: left;
+    height: 44px;
+    text-align: center;
+    color: black;  
+}
+
+.pdf i {
+    color: red;
+}
+
+.pdf:hover, .share:hover {
+    background: #CCC;
+    cursor: pointer;
+}
+
+.description {
+    padding: 12px !important;
+}
+
+.fa {
+    padding: 0 14px 0 14px;
+    width: 50px;
 }
 
 .bb {
@@ -64,34 +92,37 @@ select, button {
 }
 
 .principles {
-    width: 600px;
+    float: left; /* May only work for infrastructure page, otherwise remove */
+    width: 500px; /* was 600px */
     margin: 0 20px 20px 20px;
-    padding: 0 0 10px 0 !important;
+    padding: 0 !important;
     display: block;
-    background-color: white;    
-    -moz-border-radius-topright:5px;
-    -moz-border-radius-topleft:5px;
-    -webkit-border-top-right-radius:5px;
-    -webkit-border-top-left-radius:5px;
+    background-color: white;        
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 
 .principles h2 {
-    color:white;
-    padding: 10px;
+    color: white;
+    padding: 10px 10px 10px 20px;
 }
 
-.principles p {
+.principles p, .principles ul, .principles li {
     margin: 20px;
     padding: 5px 10px 0 10px;
 }
 
+.principles li {
+    margin-top: 0
+}
+
 .proposal {
+    float: left;
+    height: 260px;
     margin: 20px;
-    display: inline-block;
-    background-color: rgba(177, 177, 177, 0.22);
-    width: 360px;
+    margin-left: 70px;
+    background-color: white;
+    width: 300px;
     border-radius: 0% 0% 5% 5%;
     box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.47);
 }
@@ -104,12 +135,9 @@ select, button {
     flex: 1 1 auto;
 }
 
-#controls {
-    padding: 5px;
-}
-
 .content {
     margin-left: 250px;
+    background-color: ghostwhite;
 }
 
 .content h1, .content div {
@@ -119,11 +147,9 @@ select, button {
 
 .content h1 {
     text-align: center;
+    float: none;
 }
 
-#map div {
-    padding: 6px !important;
-}
 
 .quarter {
     float: left;
@@ -254,6 +280,10 @@ select, button {
     max-height: 124px;
 }
 
+.pad-24:hover {
+    filter: brightness(85%);
+}
+
 .large-font {
     font-size: 48px !important;
     /* Important required to override Font Awesome library. This is easily fixable with different fa-icon class. */
@@ -261,33 +291,20 @@ select, button {
 
 /* Basic layout */
 header, footer {
-    background-color: #616161;
+    background-color: #4E4E4E;
     color: white;
     height: auto;
     text-align: center;
 }
 
-nav {
-    background-color: bisque;
-    width: 250px;
-}
-
 /* Section styling */
-nav header span {
-    text-align: center;
-}
-
 span {
     display: inline-block;
     padding: 8px;
 }
 
-.small {
-    font-size: 10px;
-}
-
 .circle {
-    border-radius: 100%;
+    border-radius: 75%;
 }
 
 main {
@@ -297,24 +314,17 @@ main {
 nav {
     position: fixed;
     height: 100%;
-}
-
-nav ul {
-    list-style-type: none;
+    width: 250px;
 }
 
 nav ul li {
-    border-bottom: 1px solid gray;
-    padding: 8px;
+    padding: 8px 22px 8px 22px;
 }
 
 /* Specific ELements */
 nav header a img, nav header a {
     height: 34.4px;
-}
-
-nav header {
-    background-color: #000;
+    color: white;
 }
 
 footer p {
@@ -325,18 +335,20 @@ nav div {
     background-color: white;
 }
 
-nav div ul li img {
-    /* width: 100px;
-    height: auto; */
-    /* FIXME: The image is not square so cannot be a perfect circle. */
-    width: 72px;
-    height: 58px;
-    float: left;
+nav div ul li {
+    background-color: black;
 }
 
-nav div ul li span {
+nav div ul li img {
+    width: 72px;
     float: left;
-    line-height: 16px;
+    margin-top: -5px;
+}
+    
+nav div ul li span {
+    color: white;
+    text-align: center;
+    line-height: 22px;
     padding-left: 20px;
 }
 
@@ -344,15 +356,35 @@ nav div ul li span strong {
     padding-top: 200px;
 }
 
-nav div ul li:first-child {
-    height: 90px;
-    line-height: 45px;
-    padding: 14px 14px 14px 34px !important;
-    /* FIXME: Create a separate class for the sidebar elements below this. Then remove !important. */
+nav div ul a li:first-child {
+    background-color: #F1F1F1;
+    border-bottom: 1px dotted black;
+    margin-bottom: 0.2px;
+    padding: 8px;
 }
 
-nav div ul li:not(:first-child) {
-    border: none;
+nav div ul a {
+    color: #000;
+    text-decoration: none;
+}
+
+nav div ul a li:hover {
+    color: white;
+    background-color: #555;
+    text-decoration: none;   
+}
+
+nav div ul a:hover {
+    color: white;
+    background-color: #555;
+    text-decoration: none;
+}
+
+nav div ul li:first-child {
+    padding: 15px 14px 15px 34px;
+    background-color: #black; /* used to be antiquewhite */
+    margin-bottom: 1px;
+    /* FIXME: Create a separate class for the sidebar elements below this. Then remove !important. */
 }
 
 main header:first-child {
@@ -360,11 +392,7 @@ main header:first-child {
 }
 
 main header div a {
-    color: inherit;
-}
-
-nav header a {
-    color: inherit;
+    color: white;
 }
 
 a {
@@ -372,5 +400,244 @@ a {
 }
 
 a:hover {
-    text-decoration: underline;
+    filter: brightness(85%);
+}
+
+/* Style the tab */
+div.tab {
+    overflow: hidden;
+    border: 1px solid #CCC;
+    background-color: #F1F1F1;
+    padding: 0 20px;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    background-color: inherit;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 8px;
+    transition: 0.3s;
+    margin: 0;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    background-color: #ccc;
+}
+div.tab button.activerailtab {
+    background-color: #ccc;
+}
+div.tab button.activeroadtab {
+    background-color: #ccc;
+}
+div.tab button.activeskytab {
+    background-color: #ccc;
+}
+div.tab button.activecommunicationstab {
+    background-color: #ccc;
+}
+div.tab button.activehousingtab {
+    background-color: #ccc;
+}
+div.tab button.activeenergytab {
+    background-color: #ccc;
+}
+
+h2 select {
+    font: inherit;
+    color: inherit;
+    background: inherit;
+    border: 1px solid white;
+    margin: 0;
+    padding: 6px;
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;
+}   
+
+.tabcontent {
+    -webkit-animation: fadeEffect 1s;
+    animation: fadeEffect 1s; /* Fading effect takes 1 second */
+}
+
+@-webkit-keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+@keyframes fadeEffect {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+
+blockquote {
+    font-family: Georgia, serif;
+    position: relative;
+    margin: 0.5em;
+    padding: 0.5em 2em 0.5em 3em;
+    color: black;
+}
+/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+blockquote:before {
+    font-family: Georgia, serif;
+    position: absolute;
+    font-size: 4em;
+    line-height: 1;
+    top: 0;
+    left: 0;
+    content: "\201C";
+    color: #999999;
+}
+blockquote:after {
+    font-family: Georgia, serif;
+    position: absolute;
+   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
+    float: right;
+    font-size: 4em;
+    line-height: 1;
+    right: 0;
+    bottom: -0.5em;
+    content: "\201D";
+    color: #999999;
+}
+blockquote footer {
+    padding: 0 2em 0 0;
+    text-align:right;
+}
+
+body {}
+
+.main-container {}
+
+.wrapper {
+    border: 1px solid #ddd;
+    width: 87%;
+    margin: 0px auto;
+    height: 230px;
+    margin-top: 4%;
+}
+
+.tb-head {
+    border-bottom: 1px solid #ddd;
+    background-color: #53892f;
+    padding: 3%;
+}
+
+.clear {
+    clear: both;
+}
+
+.target {
+    float: left;
+    margin-left: 4%;
+    color: white;
+}
+
+.user1 {
+    float: left;
+    margin-left: 16%;
+    color: white;
+}
+
+.user2 {
+    float: left;
+    margin-left: 18%;
+    color: white;
+}
+
+.user3 {
+    float: left;
+    margin-left: 15%;
+    color: white;
+}
+
+.user4 {
+    float: left;
+    margin-left: 16%;
+    color: white;
+}
+
+.tb-body {
+    width: 100%;
+    text-align: center;
+}
+
+.tb-body .inner-target {
+    height: 141px;
+    color: #1990CC !important;
+    border-right: 1px solid #ddd;
+    float: left;
+    width: 17.7%;
+    border-bottom: 1px solid #ddd;
+}
+
+.inner-target {
+    float: left;
+    padding: 5px !important;
+}
+
+.tb-body .inner-user1 {
+    height: 141px;
+    color: #1990CC !important;
+    float: left;
+    width: 17.8%;
+    border-right: 1px solid #ddd;
+    padding: 1%;
+    border-bottom: 1px solid #ddd;
+}
+
+.tb-body .inner-user2 {
+    height: 141px;
+    color: #1990CC !important;
+    float: left;
+    width: 17.7%;
+    border-right: 1px solid #ddd;
+    padding: 1%;
+    border-bottom: 1px solid #ddd;
+}
+
+.tb-body .inner-user3 {
+    height: 141px;
+    color: #1990CC !important;
+    float: left;
+    width: 17.8%;
+    border-right: 1px solid #ddd;
+    padding: 1%;
+    border-bottom: 1px solid #ddd;
+}
+
+.tb-body .inner-user4 {
+    height: 141px;
+    color: #1990CC !important;
+    float: left;
+    width: 17.7%;
+    border-right: none;
+    padding: 1%;
+    border-bottom: 1px solid #ddd;
+}
+
+.dragable {
+    display: inline-block !important;
+    border: 1px solid;
+    cursor: pointer;
+    margin-bottom: 0 !important;
+    padding: 0 !important;
+}
+
+.droppable {
+    width: 100%;
+    height: inherit;
 }

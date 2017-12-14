@@ -1,16 +1,17 @@
 <ul>
     <li>
-        <img src="images/profile.jpg" class="circle" title="Paul Roskell" />
+        <img src="images/profile.png" class="circle" title="Paul Roskell" />
         <span>
             Created by <br><strong class="small">Paul Roskell</strong>
         </span>
     </li>
-    <li class="item"><i class="fa fa-suitcase" aria-hidden="true"></i> <a href="deficit_reduction.html">Deficit Reduction</a></li>
-    <li class="item"><i class="fa fa-folder-open" aria-hidden="true"></i> <a href="departmental_reform.html">Departmental Reform</a></li>
-    <li class="item"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i> <a href="electoral_analysis.html">Electoral Analysis</a></li>
-    <li class="item"><i class="fa fa-map" aria-hidden="true"></i> <a href="boundary_reform.html">Boundary Reform</a></li>
-    <li class="item"><i class="fa fa-building" aria-hidden="true"></i> <a href="state_builder.html">State Builder</a></li>
-    <li class="item"><i class="fa fa-compass" aria-hidden="true"></i> <a href="compass.html">Political Compass</a></li>
-    <li class="item"><i class="fa fa-globe" aria-hidden="true"></i> <a href="global_polls.html">Global Polls</a></li>
-    <li class="item"><i class="fa fa-shield" aria-hidden="true"></i> <a href="selsdon.html">Selsdon Principles</a></li>
+    <a href="deficit_reduction.html"><li class="item"><i class="fa fa-suitcase" aria-hidden="true"></i>Deficit Reduction</li></a>
+    <a href="departmental_reform.html"><li class="item"><i class="fa fa-folder-open" aria-hidden="true"></i>Departmental Reform</li></a>
+    <a href="electoral_analysis.html"><li class="item"><i class="fa fa-arrow-circle-up" aria-hidden="true"></i>Electoral Analysis</li></a>
+    <a href="boundary_reform.html"><li class="item"><i class="fa fa-map" aria-hidden="true"></i>Boundary Reform</li></a>
+    <a href="state_builder.html"><li class="item"><i class="fa fa-building" aria-hidden="true"></i>State Builder</li></a>
+    <a href="compass.html"><li class="item"><i class="fa fa-compass" aria-hidden="true"></i>Political Compass</li></a>
+    <a href="global_polls.html"><li class="item"><i class="fa fa-globe" aria-hidden="true"></i>Poll Tracker</li></a>
+    <a href="selsdon.html"><li class="item"><i class="fa fa-shield" aria-hidden="true"></i>Selsdon Principles</li></a>
+    <a href="media_coverage.html"><li class="item"><i class="fa fa-film" aria-hidden="true"></i>Media Coverage</li></a>
 </ul>

@@ -1,0 +1,27 @@
+<div>
+
+<div>
+    <div class="principles sm">
+        <h1>Policy Choices</h1>
+        <h2>Constitution</h2>
+        <div>
+            <input type="radio" name="constitution" value="written"> Written&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="constitution" value="unwritten"> Unwritten
+        </div>
+        <h2>Legislature</h2>
+        <div>
+            <input type="radio" name="legislature" value="unicarmel"> Unicarmel&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="radio" name="legislature" value="bicarmel"> Bicarmel
+        </div>
+        <h2>Executive</h2>
+        <h2>Taxation</h2>
+        <h2>Border</h2>
+        <h2>Prison</h2>
+    </div>
+    <div class="principles sm">
+        <h1>Model State</h1>
+        <p style="text-align:center;">There are currently no institutions of the state.</p><br><br>
+    </div>
+<div>
+
+</div>

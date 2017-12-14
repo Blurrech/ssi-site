@@ -1,9 +1,285 @@
 <h1>Private Infrastructure</h1>
+<div style="float: left; height: 1000px; width: 600px;">
 <div class="principles pi">
     <h2>Principles</h2>
     <p>A private monopoly is superior to a state monopoly.</p>
     <p>A competitive market is superior to a private monopoly.</p>
 </div>
+
+<div class="principles pi">
+    <h2>Market Performance</h2>
+    <p>The most successful privatisations result in a market in which:</p>
+    <ul>
+       <li>Public investment as a share of total investment tends to zero.</li>
+       <li>The government ceases to set prices in statute.</li>
+       <li>Public subsidies tend to zero.</li>
+       <li>Taxation is dependent on and has a strong positive correlation with economic acivity.</li>
+    </ul>
+    <p>Privatisation is a necessary step for a well functioning market, but is not a sufficient one. Further reform is required in the markets where these results have not been achieved.</p>
+</div>
+</div>
+
+<script>
+var tabsToWhere = 'railtab';
+var tabsToClose = ['railtab', 'roadtab', 'skytab', 'communicationstab', 'energytab', 'housingtab'];
+var cityPrefix = '';
+function open(evt, cityName, tabtype) {
+    cityName = cityPrefix + cityName;
+    
+    // Declare all variables
+    var i, k, tabcontent, tablinks;
+
+    // Get all elements with class=tabsToWhere and hide them
+    for (k = 0; k < tabsToClose.length; k++) {
+        tabcontent = document.getElementsByClassName(tabsToClose[k]);
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+    }
+
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        if (evt != null) tablinks[i].className = "tablink";
+    }
+    
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(cityName).style.display = "block";
+    
+    if (evt != null) {
+        evt.currentTarget.className += " active" + tabtype;
+    }
+}
+
+var defaultx = document.getElementById("default");
+defaultx.click();
+
+function showDiv(elem) {
+    var tabsBefore = tabsToWhere;
+    cityPrefix = elem.value.charAt(0).toUpperCase() + elem.value.substr(1);
+    switch(elem.value) {
+        case "rail":
+            tabsToWhere = 'railtab';
+            cityPrefix = '';    
+            break;
+        case "road":
+            tabsToWhere = 'roadtab';
+            break;
+        case "sky":
+            tabsToWhere = "skytab";
+            break;
+        case "communications":
+            tabsToWhere = "communicationstab";
+            break;
+        case "energy":
+            tabsToWhere = "energytab";
+            break;
+        case "housing":
+        default:
+            tabsToWhere = "housingtab";
+            break; 
+    }
+    var defaultx = document.getElementById("default");
+    defaultx.click();
+}
+document.getElementById("Investment").style.display = "block"   
+</script>
+
+<div>
+
+<div class="principles pi">
+    <h2><select onchange="showDiv(this)">
+  <option value="rail">Rail</option>
+  <option value="road">Road</option>
+  <option value="sky">Sky</option>
+  <option value="communications">Communications</option>
+  <option value="energy">Energy</option>
+  <option value="housing">Housing</option>
+</select></h2>
+    <div class="tab">
+        <button id="default" class="tablink default" onclick="open(event, 'Investment', tabsToWhere)">Investment</button>
+        <button class="tablink" onclick="open(event, 'PriceControls', tabsToWhere)">Price Controls</button>
+        <button class="tablink" onclick="open(event, 'Subsidies', tabsToWhere)">Subsidies</button>
+        <button class="tablink" onclick="open(event, 'Taxation', tabsToWhere)">Taxation</button>
+        <button class="tablink" onclick="open(event, 'Recommendations', tabsToWhere)">Recommendations</button>
+    </div>
+
+    <div id="Investment" class="railtab">
+    <h3>Investment</h3>
+    <p>Network Rail, a public body, is responsible for the vast majority of rail infrastructure. This investment is funded through a combination of track-access charges and the government subsidy.</p>
+    </div>
+
+    <div id="PriceControls" class="railtab">
+    <h3>Price Controls</h3>
+    <p>According to the 2015/16 ORR UK Rail Industry Financial Information report, 36% of GB passenger fare income is from regulated ticket types.</p>
+    <p>This distorts the market risking supply not meeting demand in certain routes. It is also wholly unnecessary since the market provides a natural cap at the point whereby price increases begin to lower profits.</p>
+    </div>
+
+    <div id="Subsidies" class="railtab">
+    <h3>Subsidies</h3>
+    <p>The government has subsidised the rail industry in every year since privatisation. Net government support to the rail industry in Great Britain totalled £4.2 billion in 2016-17.</p>
+    </div>
+    
+    <div id="Taxation" class="railtab">
+    <h3>Taxation</h3>
+    <p>Train operating companies pay tax primarily through corporation tax which is linked to economic activity. The number of tickets bought impacts the revenue which is used to calculate taxable profits. This is a desirable setup.</p>
+    <p>Complexity is greatly increased by contractual arrangement of the current franchising system - which is constantly in flux and makes nationalisation uncomfortably easy.</p>
+    </div>
+    
+    <div id="Recommendations" class="railtab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>Network Rail should be privatised.</li>
+        <li>Rail subsidies should be eliminated by a combination of raising fares and cutting costs.</li>
+        <li>RMT victories and obstruction have kept labour costs at 23% of GB gross franchised train operator expenditure and have left vulnerable unionless commuters subsidising unjustifiable salaries of a small elite. The Trade Union Act 2016 has made progress in this area with time limits on strike mandates and new turnout thresholds. However, this is not retrospective.
+        <br><br>The government should act to prevent RMT using indefinite mandates on many routes to stonewall DOO (driver-only operation).</li>
+        <li>Rail fares should be gradually deregulated by lifting the CPI cap.</li>
+    </ul>
+    </div>
+    
+    <div id="RoadInvestment" class="roadtab">
+    <h3>Investment</h3>
+    <p>Road Investment across the UK is split across several disparate groups. Local Authorities, Transport for London, Transport Scotland, Transport for the North and more.</p>
+    </div>
+
+    <div id="RoadPriceControls" class="roadtab">
+    <h3>Price Controls</h3>
+    <p>Price controls are beginning to re-emerge in this market with the introduction of congestion charges, where the charge is usually set by the state.</p>
+    </div>
+
+    <div id="RoadSubsidies" class="roadtab">
+    <h3>Subsidies</h3>
+    <p>Bus routes currently receive a government subsidy in the form of the
+    Bus Service Operators Grant.</p>
+    </div>
+    
+    <div id="RoadTaxation" class="roadtab">
+    <h3>Taxation</h3>
+    <p>Road users currently pay fuel duty which correlates to their road usage. However, under the Climate CHange Act this is due end.</p>
+    <p>VED is paid annually for cars on the road, but with no link to road usage. This means the tax does not correlate well to the costs it seeks to fund.</p>
+    </div>
+    
+    <div id="RoadRecommendations" class="roadtab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>Fuel duty and Vehicle Excise Duty should be abolished and replaced by a per mile road tax to be collected by insurance companies. We defer entirely to PolicyExchange's "Miles Better" proposal.</li>
+        <li>The  Bus Service Operator's Grant should be phased out.</li>
+    </ul>
+    </div>
+    
+    <div id="SkyInvestment" class="skytab">
+    <h3>Investment</h3>
+    <p>The majority of investment in UK airports is private, however there are a few exceptions such as Cardiff Airport which was nationalised by the Welsh Labour Government.</p>
+    <p>The UK government also maintains a 49% stake in NATS Holdings (National Air Traffic Services). Despite repeatedly trailing a sale in various budgets, the stake remains in government hands.</p>
+    </div>
+
+    <div id="SkyPriceControls" class="skytab">
+    <h3>Price Controls</h3>
+    <p>The Civil Aviation Authority currently sets price controls for airports with excessive market power in 5 yearly reviews.</p>
+    </div>
+
+    <div id="SkySubsidies" class="skytab">
+    <h3>Subsidies</h3>
+    <p>There are no notable subsidies in this industry as far as we are aware.</p>
+    </div>
+    
+    <div id="SkyTaxation" class="skytab">
+    <h3>Taxation</h3>
+    <p>Air Passenger Duty was originally implemented to discourage long distance flights. However, it is badly designed, discourages growth and fails to internalise the carbon costs. Old inefficient planes are treated equally to ones using the latest most efficient engines.</p>
+    </div>
+    
+    <div id="SkyRecommendations" class="skytab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>Air Passenger Duty should be abolished.</li>
+        <li>The government should immediately sell their 49% stake in NATS Holdings.</li>
+    </ul>
+    </div>
+    
+    <div id="CommunicationsInvestment" class="communicationstab">
+    <h3>Investment</h3>
+    <p>The government invested £1.7bn in broadband from 2010 to 2015. More recently, the government announced a £400m digital infrastructure investment fund.</p>
+    </div>
+
+    <div id="CommunicationsPriceControls" class="communicationstab">
+    <h3>Price Controls</h3>
+    <p>Ofcom enforces price controls on second-class stamps, mobile termination rates and Openreach broadband service charges.</p>
+    </div>
+
+    <div id="CommunicationsSubsidies" class="communicationstab">
+    <h3>Subsidies</h3>
+    <p>The government currently provides a Better Broadband Subsidy Scheme to businesses and households unable to access an affordable servivce with speeds of at least 2MB per second</p>
+    </div>
+    
+    <div id="CommunicationsTaxation" class="communicationstab">
+    <h3>Taxation</h3>
+    <p>The government has legislated for 100% businness rate relief for full-fibre infrastructure. Sacrificing taxation to encourage new investment in a market lacking competition is a commendable move.</p>
+    </div>
+    
+    <div id="CommunicationsRecommendations" class="communicationstab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>Openreach should be legally separated from BT.</li>
+        <li>Channel 4 should be privatised.</li>
+    </ul>
+    </div>
+    
+    <div id="HousingInvestment" class="housingtab">
+    <h3>Investment</h3>
+    <p>...</p>
+    </div>
+
+    <div id="HousingPriceControls" class="housingtab">
+    <h3>Price Controls</h3>
+    <p>...</p>
+    </div>
+
+    <div id="HousingSubsidies" class="housingtab">
+    <h3>Subsidies</h3>
+    <p>...</p>
+    </div>
+    
+    <div id="HousingTaxation" class="housingtab">
+    <h3>Taxation</h3>
+    </div>
+    
+    <div id="HousingRecommendations" class="housingtab">
+    <h3>Recommendations</h3>
+    <p>...</p>
+    </div>
+    
+    <div id="EnergyInvestment" class="energytab">
+    <h3>Investment</h3>
+    <p>...</p>
+    </div>
+
+    <div id="EnergyPriceControls" class="energytab">
+    <h3>Price Controls</h3>
+    <p>...</p>
+    </div>
+
+    <div id="EnergySubsidies" class="energytab">
+    <h3>Subsidies</h3>
+    <p>...</p>
+    </div>
+    
+    <div id="EnergyTaxation" class="energytab">
+    <h3>Taxation</h3>
+    </div>
+    
+    <div id="EnergyRecommendations" class="energytab">
+    <h3>Recommendations</h3>
+    <ul>
+        <li>The capacity market should be abolished in 2030.</li>
+        <li>Renewable subsidies should be withdrawn after coal and gas power plants have been abolished.</li>
+        <li>The UK should leave the EU ETS.</li>
+        <li>The carbon price floor should be increased until its revenue is zero and then abolished.</li>
+    <ul>
+    </div>
+</div>
+
 <div class="diagram dwhite">
 
+</div>
 </div>

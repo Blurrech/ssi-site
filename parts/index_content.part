@@ -1,0 +1,82 @@
+
+<script>
+
+
+function httpGetAsync(theUrl, callback)
+{
+    var xmlHttp = new XMLHttpRequest();
+    xmlHttp.onreadystatechange = function() { 
+        if (xmlHttp.readyState == 4 && xmlHttp.status == 200)
+            callback(xmlHttp.responseText);
+    }
+    var API_KEY = "{YOUR_API_KEY}";
+    var folderID = "BB0CHANGEDIDF5waGdzbUQ5aWs";
+    var theUrl = "https://www.googleapis.com/drive/v2/files?q='" + folderID + "'+in+parents&key=" + API_KEY;
+    xmlHttp.open("GET", theUrl, true); // true for asynchronous 
+    xmlHttp.send(null); 
+}
+
+//GET
+
+</script>
+
+<div>
+
+<h1>Reform Proposals</h1>
+
+<div class="proposal">
+    <div class="description"><h4>Global BBC: Conserving the BBC in a highly competitive global media market.</h4></div>
+    <a href="https://docs.google.com/document/d/1hyH9aKmjIMVBj2Mp6Np8kAPqjByXfYjF5_ONq9b3IZI/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=Global BBC: Read this report by the Small State Institute."
+  data-size="large"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i>Tweet</a></p></div>
+</div>
+
+<div class="proposal">
+    <div class="description"><h4>Universal Jobmatch: Overhauling access and pathways with a revitalised job searching service.</h4></div>
+    <a href="https://docs.google.com/document/d/1X1XZbx7YXohxIN7YbWsOAryV4n-hmtUIJGiVMy1l454/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i><p style="margin-top: 12px;">Share</p></div>
+</div>
+
+<div class="proposal">
+    <div class="description"><h4>Real Time Treasury: Refining the determination of tax rates and budget delivery to improve outcomes.</h4></div>
+    <a href="https://docs.google.com/document/d/1OcNlaAD92r9-T379zmcVdxzpgJC7mp8lWNrj1kQyLlQ/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i><p style="margin-top: 12px;">Share</p></div>
+</div>
+
+<div class="proposal">
+    <div class="description"><h4>National Taxi Licensing: Prevent council protectionism with fees and rationing.</h4></div>
+    <a href="https://docs.google.com/document/d/12Y2na23dfEJaRGi0g6bhe1vnDHU3Y6mBuU2gPLMgylQ/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i><p style="margin-top: 12px;">Share</p></div>
+</div>
+
+<div class="proposal">
+    <div class="description"><h4>Privatisation and Beyond: Extending the successes and freedom of privatisation in the UK.</h4></div>
+    <a href="https://docs.google.com/document/d/1k2ShOr37due5HLFtSKEDYvGvgS2f2fUWrI_HOUuJQCk/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i><p style="margin-top: 12px;">Share</p></div>
+</div>
+
+<div class="proposal">
+    <div class="description"><h4>Localism: A new localism agenda for a competitive economy and responsive democracy.</h4></div>
+    <a href="https://docs.google.com/document/d/1GPfLOTJyxI70ROLWnPtCC5U6BLZzh4po6gelFKHdstQ/export?format=pdf" target="_blank"><div class="pdf"><i class="fa fa-file-pdf-o fa-2x"></i>PDF</div></a>
+    <div class="share"><i style="display: none;" class="fa fa-file-pdf-o fa-2x"></i><p style="margin-top: 12px;">Share</p></div>
+</div>  
+
+<div class="proposal">
+    <p>Digital British Library<p>
+</div>
+
+<div class="proposal">
+    <p>Conservatives for Cryptocurrency</p>
+</div>
+
+</div>
+
+<p>Infrastructure and Regulation</p>
+<p>Devoled Affairs</p>
+<p>Real Time Treasury</p>
+<p>Boundary Commission<p>
+<p>Just Law<p>
+<p>Road Pricing</p>
+
+<h1>Disruption Assessment</h1>
+<p>Fusion Power</p>

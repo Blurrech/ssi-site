@@ -1,10 +1,65 @@
 <h1>Balanced Budgets</h1>
 <div class="principles bb">
     <h2>Principles</h2>
-    <p>Debt is taxation deferred.</p>
+    <p>Debt growth is deferred taxation.</p>
     <p>People spend their own money better than the state.</p>
+    <p>Competitive markets allocate the correct level of investment.</p>
 </div>
+
+<div class="principles bb">
+    <h2>Golden Rule</h2>
+    <p>Under the golden rule, over the economic cycle, the government will borrow only to invest and not to fund current spending.</p>
+    <p>However, private markets are the best way of allocating the correct amount of investment.</p>
+    <p>Therefore, the government should not borrow to fund current spending and should avoid taking investment risk on the taxpayers behalf.</p>
+</div>
+<canvas id="myChart" width="300" height="300"></canvas>
+
+<script>
+var canvas = document.getElementById("myChart");
+var ctx = canvas.getContext('2d');
+
+  var series = 
+    [-51391, -46482, -39160, -29840, -15444, 560, 11048, 19281, 6610, -19227, -32226, -35039, -39981, -37317, -36956, -81751, -153800, -143530, -115136,    -129118, -102620, -101228, -79005, -56882];
+
+var a = [-49.9, -39.5, -34.7, -32.8, -30.1];
+var myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+           labels: ['1993', '1994', '1995', '1996', '1997', '1998', '1999', '2000', '2001', '2002', '2003', '2004', '2005', '2006', '2007', '2008', '2009', '2010', '2011', '2012', '2013', '2014', '2015', '2016'],        
+           datasets: [{
+            label: 'UK Fiscal Position',
+            data: series,
+            backgroundColor: 'rgba(0, 0, 0, 0.9)',
+            borderColor: 'rgba(0,0,0,1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 25000,
+                    stepWidth: 1
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Revenue (bn)'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    autoSkip: false
+                }
+            }]
+        }
+    }
+});
+</script>
+
 <div>
     <p>The UK maitained a balanced budget between 1830 and 1913, during which the UK budget deficit averaged close to zero. The UK ran a deficit of greater than 1% of GDP in only four years between 1816 and 1899 and, excluding interest payments, the average primary budget surplus was 4.6%</p>
+    <br>
     <p>In the early 20th century, the UK spent vast amounts of money two world wars and subsequently the British empire's decline accelerated. The liberals epitomised by John Meynard Keynes and the fabians epitomised by Aneurin Bevan began a well timde assault on the British publics expectations of the state. Not to mention the establishment and resulting collapse of the gold standard system after Bretton Woods and the Nixon shock.</p>
 </div>

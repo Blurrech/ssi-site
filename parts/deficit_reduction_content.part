@@ -1,37 +1,220 @@
 <h1>Deficit Reduction</h1>
 <div class="principles bl"">
-    <h2>Reforms</h2>
+<h2>Fiscal Position <select>
+  <option value="bitcoin"> 2017</option>
+</select></h2>
+    <p>The fiscal position forecast in the 2017 Autumn Budget is as follows:</p>
+    <canvas id="fiscalPosition" width="300" height="300"></canvas>
+    <br>
+    <h2>Abolition</h2>
+    <div class="inner-user1">
+        <div class="droppable"><span class="user1inn-span"></span></div>
+    </div>
+    <h2>Cash Freeze</h2>
+    <div class="inner-user1">
+        <div class="droppable"><span class="user1inn-span"></span></div>
+    </div>
+    <h2>5% Real Terms Cut</h2>
+    <div class="inner-user1">
+        <div class="droppable"><span class="user1inn-span"></span></div>
+    </div>
+</div>
+
+
+<div class="principles bl"">
+    <h2>Tax Reforms</h2>
     <p>Merge National Insurance and Income Tax</p>
+    <p>Inheritance Tax Broader Base</p>
+    <p>Abolish the Additional Income Tax Rate</p>
 </div>
 
 <div class="principles bl"">
     <h2>Spending Cuts</h2>
-    <div class="proposal">
-Winter Fuel Payment
-</div>
-<div class="proposal">
-Foreign Aid Budget
-</div>
-<div class="proposal">
-Winter Homes Discount
-</div>
-<div class="proposal">
-Agricultural Subsidies
-</div>
-<div class="proposal">
-Arts Council
-</div>
-<div class="proposal">
-Bus Service Operators Grant
-</div>
-<div class="proposal">
-UK Research and Innovation
-</div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Winter Fuel Payment</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Foreign Aid Budget</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Winter Homes Discount</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Agricultural Subsidies</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Arts Council</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Bus Service Operators Grant</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">UK Researcha and Innovation</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Sovreign Grant</span></div></div>
+    <div class="inner-target"><div class="dragable"><span class="targetinn-span">Rail Subsidies</span></div></div>
 </div>
 
 <div class="principles bl"">
     <h2>Tax Cuts</h2>
-    <p>Carbon Price Floor</p>
-    <p>Air Passenger Duty</p>
-    <p>Climate Change Levy</p>   
+    <canvas id="myChart" width="300" height="300"></canvas>
+
+    <div class="inner-target">
+        <div class="dragable"><span class="targetinn-span">Climate Change Levy</span></div>
+    </div>
+    <div class="inner-target">
+        <div class="dragable"><span class="targetinn-span">Inheritance Tax</span></div>
+    </div>
+    <div class="inner-target">
+        <div class="dragable"><span class="targetinn-span">Corporation Tax</span></div>
+    </div>
+    <div class="inner-target">
+        <div class="dragable"><span class="targetinn-span">Air Passenger Duty</span></div>
+    </div>
+    <div class="inner-target">
+        <div class="dragable"><span class="targetinn-span">Stamp Duty Land Tax</span></div>
+    </div>
 </div>
+
+<script>
+var ctx = document.getElementById("myChart").getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["Corporation Tax", "Stamp Duty Land Tax", "Inheritance Tax",  "Air Passenger Duty", "Climate Change Levy"],
+        datasets: [{
+            label: 'Tax Cut Candidates by Revenue in 2016/17',
+            data: [45.6, 10.9, 4.7, 3.0, 1.8],
+            backgroundColor: [
+                'rgba(0, 0, 0 , 0.4)',
+                'rgba(0, 0, 0 , 0.4)',
+                'rgba(0, 0, 0 , 0.4)',
+                'rgba(0, 0, 0 , 0.4)',
+                'rgba(0, 0, 0 , 0.4 )'
+            ],
+            borderColor: [
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',    
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                }, 
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Revenue (bn)'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    autoSkip: false
+                }
+            }]
+        }
+    }
+});
+
+
+function updateFiscalPosition(policyImpact = [0, 0, 0, 0, 0]) {
+var canvas = document.getElementById("fiscalPosition");
+canvas.width = 300;
+var ctx = canvas.getContext('2d');
+
+var a = [-49.9, -39.5, -34.7, -32.8, -30.1];
+var b = a.map(function(item, index) {
+            return item - policyImpact[index];
+        });
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ["2017/18", "2018/19", "2019/20",  "2020/21", "2021/22"],
+        datasets: [{
+            label: 'Current Fiscal Position',
+            data: a,
+            backgroundColor: [
+                'rgba(0, 0, 0 , 0.9)',
+                'rgba(0, 0, 0 , 0.9)',
+                'rgba(0, 0, 0 , 0.9)',
+                'rgba(0, 0, 0 , 0.9)',
+                'rgba(0, 0, 0 , 0.9)'
+            ],
+            borderColor: [
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',    
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)'
+            ],
+            borderWidth: 1
+        }, {
+            label: 'Fiscal Position After New Policies',
+            data: b,
+            backgroundColor: [
+                'rgba(255, 0, 0 , 0.9)',
+                'rgba(255, 0, 0, 0.9)',
+                'rgba(255, 0, 0 , 0.9)',
+                'rgba(255, 0, 0 , 0.9)',
+                'rgba(255, 0, 0 , 0.9)'
+            ],
+            borderColor: [
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)',    
+                'rgba(0,0,0,1)',
+                'rgba(0,0,0,1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true,
+                    max: 10,
+                    steps: 4,
+                    stepSize: 15,
+                    stepWidth: 1
+                },
+                scaleLabel: {
+                    display: true,
+                    labelString: 'Revenue (bn)'
+                }
+            }],
+            xAxes: [{
+                ticks: {
+                    autoSkip: false
+                }
+            }]
+        }
+    }
+});
+}
+
+updateFiscalPosition();
+
+$(document).ready(function() {
+    $(".dragable").draggable({
+        cancel: "a.ui-icon",
+        revert: true,
+        helper: "clone",
+        cursor: "move",
+        revertDuration: 0
+    });
+
+    $('.droppable').droppable({
+        accept: ".dragable",
+        activeClass: "ui-state-highlight",
+        drop: function(event, ui) {
+        	var $item = $(ui.draggable)
+            if (!$item.hasClass('clone')) {
+                $item = $item.clone().addClass('clone');
+                $item.draggable({
+                    cancel: "a.ui-icon",
+                    revert: true,
+                    cursor: "move",
+                    revertDuration: 0
+                });
+            }
+            $(this).addClass('has-drop').append($item);
+        }
+    });
+
+});
+
+</script>
