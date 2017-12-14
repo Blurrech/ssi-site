@@ -92,8 +92,8 @@ select, button, #controls, #map div {
 }
 
 .principles {
-    float: left; /* May only work for infrastructure page, otherwise remove */
-    width: 500px; /* was 600px */
+    float: left;
+    width: 500px;
     margin: 0 20px 20px 20px;
     padding: 0 !important;
     display: block;
@@ -149,7 +149,6 @@ select, button, #controls, #map div {
     text-align: center;
     float: none;
 }
-
 
 .quarter {
     float: left;
@@ -382,9 +381,8 @@ nav div ul a:hover {
 
 nav div ul li:first-child {
     padding: 15px 14px 15px 34px;
-    background-color: #black; /* used to be antiquewhite */
+    background-color: #black;
     margin-bottom: 1px;
-    /* FIXME: Create a separate class for the sidebar elements below this. Then remove !important. */
 }
 
 main header:first-child {
@@ -403,7 +401,6 @@ a:hover {
     filter: brightness(85%);
 }
 
-/* Style the tab */
 div.tab {
     overflow: hidden;
     border: 1px solid #CCC;
@@ -411,7 +408,6 @@ div.tab {
     padding: 0 20px;
 }
 
-/* Style the buttons inside the tab */
 div.tab button {
     background-color: inherit;
     float: left;
@@ -423,32 +419,13 @@ div.tab button {
     margin: 0;
 }
 
-/* Change background color of buttons on hover */
 div.tab button:hover {
-    background-color: #ddd;
+    background-color: #DDD;
 }
 
-/* Create an active/current tablink class */
-div.tab button.active {
-    background-color: #ccc;
-}
-div.tab button.activerailtab {
-    background-color: #ccc;
-}
-div.tab button.activeroadtab {
-    background-color: #ccc;
-}
-div.tab button.activeskytab {
-    background-color: #ccc;
-}
-div.tab button.activecommunicationstab {
-    background-color: #ccc;
-}
-div.tab button.activehousingtab {
-    background-color: #ccc;
-}
-div.tab button.activeenergytab {
-    background-color: #ccc;
+div.tab button.active, div.tab button.activerailtab, div.tab button.activeroadtab, div.tab button.activeskytab,
+div.tab button.activecommunicationstab, div.tab button.activehousingtab, div.tab button.activeenergytab {
+    background-color: #CCC;
 }
 
 h2 select {
@@ -460,7 +437,6 @@ h2 select {
     padding: 6px;
 }
 
-/* Style the tab content */
 .tabcontent {
     display: none;
     padding: 6px 12px;
@@ -469,13 +445,7 @@ h2 select {
 }   
 
 .tabcontent {
-    -webkit-animation: fadeEffect 1s;
-    animation: fadeEffect 1s; /* Fading effect takes 1 second */
-}
-
-@-webkit-keyframes fadeEffect {
-    from {opacity: 0;}
-    to {opacity: 1;}
+    animation: fadeEffect 1s;
 }
 
 @keyframes fadeEffect {
@@ -490,7 +460,7 @@ blockquote {
     padding: 0.5em 2em 0.5em 3em;
     color: black;
 }
-/* Thanks: http://callmenick.com/post/styling-blockquotes-with-css-pseudo-classes */
+
 blockquote:before {
     font-family: Georgia, serif;
     position: absolute;
@@ -501,10 +471,10 @@ blockquote:before {
     content: "\201C";
     color: #999999;
 }
+
 blockquote:after {
     font-family: Georgia, serif;
     position: absolute;
-   /* display: block; don't use this, it raised the quote too high from the bottom - defeated line-height? */
     float: right;
     font-size: 4em;
     line-height: 1;
@@ -513,17 +483,14 @@ blockquote:after {
     content: "\201D";
     color: #999999;
 }
+
 blockquote footer {
     padding: 0 2em 0 0;
-    text-align:right;
+    text-align: right;
 }
 
-body {}
-
-.main-container {}
-
 .wrapper {
-    border: 1px solid #ddd;
+    border: 1px solid #DDD;
     width: 87%;
     margin: 0px auto;
     height: 230px;
@@ -531,8 +498,8 @@ body {}
 }
 
 .tb-head {
-    border-bottom: 1px solid #ddd;
-    background-color: #53892f;
+    border-bottom: 1px solid #DDD;
+    background-color: #53892F;
     padding: 3%;
 }
 
@@ -546,87 +513,9 @@ body {}
     color: white;
 }
 
-.user1 {
-    float: left;
-    margin-left: 16%;
-    color: white;
-}
-
-.user2 {
-    float: left;
-    margin-left: 18%;
-    color: white;
-}
-
-.user3 {
-    float: left;
-    margin-left: 15%;
-    color: white;
-}
-
-.user4 {
-    float: left;
-    margin-left: 16%;
-    color: white;
-}
-
-.tb-body {
-    width: 100%;
-    text-align: center;
-}
-
-.tb-body .inner-target {
-    height: 141px;
-    color: #1990CC !important;
-    border-right: 1px solid #ddd;
-    float: left;
-    width: 17.7%;
-    border-bottom: 1px solid #ddd;
-}
-
 .inner-target {
     float: left;
     padding: 5px !important;
-}
-
-.tb-body .inner-user1 {
-    height: 141px;
-    color: #1990CC !important;
-    float: left;
-    width: 17.8%;
-    border-right: 1px solid #ddd;
-    padding: 1%;
-    border-bottom: 1px solid #ddd;
-}
-
-.tb-body .inner-user2 {
-    height: 141px;
-    color: #1990CC !important;
-    float: left;
-    width: 17.7%;
-    border-right: 1px solid #ddd;
-    padding: 1%;
-    border-bottom: 1px solid #ddd;
-}
-
-.tb-body .inner-user3 {
-    height: 141px;
-    color: #1990CC !important;
-    float: left;
-    width: 17.8%;
-    border-right: 1px solid #ddd;
-    padding: 1%;
-    border-bottom: 1px solid #ddd;
-}
-
-.tb-body .inner-user4 {
-    height: 141px;
-    color: #1990CC !important;
-    float: left;
-    width: 17.7%;
-    border-right: none;
-    padding: 1%;
-    border-bottom: 1px solid #ddd;
 }
 
 .dragable {
