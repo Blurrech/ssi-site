@@ -271,7 +271,7 @@ document.getElementById("Investment").style.display = "block"
     <div id="EnergyRecommendations" class="energytab">
     <h3>Recommendations</h3>
     <ul>
-        <li>The capacity market should be abolished in 2030.</li>
+        <li>The capacity market should not be reinstated.</li>
         <li>Renewable subsidies should be withdrawn after coal and gas power plants have been abolished.</li>
         <li>The UK should leave the EU ETS.</li>
         <li>The carbon price floor should be increased until its revenue is zero and then abolished.</li>
